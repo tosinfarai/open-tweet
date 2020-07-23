@@ -19,7 +19,6 @@ public class OpenTweetApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/feed").allowedOrigins("https://open-tweet-feed.herokuapp.com");
-				registry.addMapping("/feed").allowedOrigins("http://open-tweet-feed.herokuapp.com");
 			}
 		};
 	}

@@ -20,7 +20,7 @@ import com.example.opentweet.entities.Tweet;
 import com.example.opentweet.exceptions.ResourceNotFoundException;
 import com.example.opentweet.repositories.TweetRepository;
 
-@CrossOrigin(origins = {"http://open-tweet-feed.herokuapp.com"})
+@CrossOrigin(origins = {"https://open-tweet-feed.herokuapp.com"})
 @RestController
 @RequestMapping("/feed")
 public class TweetController {

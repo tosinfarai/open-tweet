@@ -30,7 +30,6 @@ public class TweetController {
 	
 	@Autowired
 	private TweetRepository tweetRepository;
-	private CloudinaryService cloudinaryService;
 	
 	@GetMapping
 	public List<Tweet> getTweets(){
@@ -38,12 +37,7 @@ public class TweetController {
 	}
 	
 	@PostMapping
-	public Tweet postTweet(@Valid @RequestBody Tweet tweet, 
-			@RequestParam(name = "file", required = false) MultipartFile file) {
-		if (file != null) {
-			String url = cloudinaryService.uploadFile(file);
-			tweet.setImageUrl(url);
-		}
+	public Tweet postTweet(@Valid @RequestBody Tweet tweet) {
 		return tweetRepository.save(tweet);
 	}
 	

@@ -13,20 +13,18 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
-@Table (name = "tweets")
 public class Tweet {
 	
 	public Tweet() {
 		
 	}
 	
-	public Tweet(Long id, String name, String tweet, LocalDateTime dateTime, String imageUrl) {
+	public Tweet(Long id, String name, String tweet, LocalDateTime dateTime) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.tweet = tweet;
 		this.dateTime = dateTime;
-		this.imageUrl = imageUrl;
 	}
 	
 
@@ -45,10 +43,7 @@ public class Tweet {
 	@CreationTimestamp
 	private LocalDateTime dateTime;
 	
-	@Column(name = "image_url")
-	private String imageUrl;
 
-	
 	public long getId() {
 		return id;
 	}
@@ -75,14 +70,6 @@ public class Tweet {
 	
 	public LocalDateTime getDateTime() {
 		return dateTime;
-	}
-
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
 	}
 
 	public void setDateTime(LocalDateTime dateTime) {
